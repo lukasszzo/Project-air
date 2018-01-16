@@ -3,68 +3,169 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sprawdź stan powietrza</title>
+    <title>app</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Playfair+Display:400,900&amp;subset=latin-ext" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-
-
+    <link rel="stylesheet" href="css/stylenieuporzadkowane.css">
 </head>
 
 <body>
-    <div class="header-container">
-        <header class='container clearfix'>
-            <a class='header-logo' href="#">
-                    <img src="images/if_cloud_weather_107222.svg" alt="">
-                </a>
-            <nav class='header-nav'>
+
+    <div class="header-cnt">
+        <header class="container clearfix">
+            <div class="main-logo">
+                <a href="/">
+                        <img src='images/Clouds-icon.png'  width="90" height="68" >
+                    </a>
+            </div>
+
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="" alt=''>Strona główna</a></li>
-                    <li><a href="" alt=''>O projekcie</a></li>
-                    <li><a href="" alt=''>Jak to działa?</a></li>
-                    <li><a href="" alt=''>Kontakt</a></li>
+                    <li><a href="">Strona główna</a></li>
+                    <li><a href="">O projekcie</a></li>
+                    <li><a href="">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
+        <div class="main-container">
+            <main>
+                <section class="section-slider">
+                    <div class="container">
+                        <div class="slider" id="main-slider">
+                            <button type="button" class="arrow left"> &lt; </button>
+                            <div class="slider-container">
+                                <div class="slide active">
+                                    <div class="slide-image">
+                                        <img src="images/nowe.jpeg">
+                                    </div>
+                                    <div class="slide-container">
+                                        <div class="slide-text">
+                                            <h1>Czy smog szkodzi i jak?</h1> Smog szkodzi. Zawiera substancje toksyczne i rakotwórcze. Według danych Unii Europejskiej z powodu smogu umiera w Polsce ponad 40 tys. osób rocznie. Złe samopoczucie, nasilenie dolegliwości oddechowych, infekcje
+                                            oddechowe to objawy, jakie mogą wystąpić u nas od razu. Długotrwałe narażenie na smog zwiększa ryzyko nowotworów, chorób układu oddechowego, naczyniowo-sercowego, odpornościowego. Szczególnie groźny dla naszego
+                                            zdrowia jest benzo(a)piren - rakotwórczy związek chemiczny.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide">
+                                    <div class="slide-image">
+                                        <img src="images/czujnik-airly.jpg">
+                                    </div>
+                                    <div class="slide-container">
+                                        <div class="slide-text">
+                                            <h1>Jak jest mierzona jakość powietrza w Polsce?</h1> Inspekcja Ochrony Środowiska zbiera dane dotyczące zanieczyszczeń powietrza ze stacji pomiarowych umieszczonych w poszczególnych miastach. W większych miastach działa często więcej niż jedna stacja pomiarowa.
+                                            W Polsce mierzony jest poziom siedmiu substancji w powietrzu. Są to pył zawieszony PM10, pył zawieszony PM2,5, dwutlenek siarki (SO2), dwutlenek azotu (NO2), tlenek węgla (CO), benzen (C6H6) i ozon (O3). Na
+                                            podstawie wyników poszczególnych pomiarów wyliczany jest tzw. Polski Indeks Jakości Powietrza. To sześciostopniowa skala. Może być: bardzo dobry, dobry, umiarkowany, dostateczny, zły, bardzo zły. Warto zaznaczyć,
+                                            że Polska ma inną skalę dotyczącą jakości powietrza niż inne kraje Europy. Więcej o skalach pomiarowych za granicą i o tzw. Air Quality Index dowiesz się
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="arrow right"> &gt; </button>
+                        </div>
+                    </div>
+                </section>
 
+                <div class="container clearfix">
+                    <div class="main-title">
+                        Sprawdź jakość powietrza w Twoim otoczeniu
+                    </div>
+
+                    <ul class='dane'><b>Aktualne pomiary smogu w Olsztynie</b>
+                        <li>WIOŚ Olsztyn ul. Puszkina</li>
+                        <li>Polski indeks jakości powietrza: Dobra</li>
+                        <li>PM10 - pył zawieszony: 30,8 ug/m3 (Dobra)</li>
+                        <li>PM2,5 - pył zawieszony: 30,4 ug/m3 (Dobra)</li>
+                        <li>PM2,5 - pył zawieszony: 30,4 ug/m3 (Dobra)</li>
+                        <li>C6H6 - benzen: 2 ug/m3 (Bardzo dobra)</li>
+                        <li>SO2 - dwutlenek siarki: 0,2 ug/m3 (Bardzo dobra</li>
+                        <li>O3 - ozon: 29,5 ug/m3 (Bardzo dobra)</li>
+                        <li>CO - tlenek węgla: 0,7 mg/m3 (Bardzo dobra)</li>
+
+
+                    </ul>
+
+                </div>
+
+        </div>
+
+        </main>
     </div>
-    <div class="main-container">
-        <main>
 
-            <div class="container clearfix">
-                <div class="main-title">
-                    Sprawdź jakość powietrza w Twoim otoczeniu
-                </div><h1></h1>
-                <form class="form-container">
-                    <label>Miejscowość:</label>
-                    <input type="text" class='form-control' id='inputCity'>
-                    <button type="button" class='btn-search'>Szukaj</button>
-                </form>
-                <ul class="list" id='listComponents'>
-                </ul>
+    <section class="main-dual">
+        <div class="container">
+
+            <div class="row clearfix">
+
             </div>
 
-    </div>
+        </div>
+    </section>
+    <section class="main-news">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col col-1-4">
 
-    </main>
-    </div>
-    <div class="footer-container">
-        <footer class="">
-            <div class="container clearfix">
+                    <div class="main-news-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut maxime a ab animi, sapiente placeat mollitia alias provident. Facere, alias dolores quisquam qui repellat excepturi, quae enim ipsum sit ipsa.
+                    </div>
 
-                <a class='footer-logo' href="#">
-                    <img src="images/if_cloud_weather_107222.svg" alt="">
-                </a>
-                <small class="copyright">
-                    &copy;apa
-                </small>
+                </div>
+                <div class="col col-1-4">
+
+                    <div class="main-news-text">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quas quo quam, harum! Quos eius culpa minima voluptates soluta itaque, libero ducimus vel laboriosam? At similique non saepe quibusdam commodi!
+                    </div>
+
+                </div>
+                <div class="col col-1-4">
+
+                    <div class="main-news-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ac suscipit tellus eleifend eget. Ut nisi mauris, viverra id leo ut, laoreet dictum turpis. Phasellus suscipit magna ultrices blandit eleifend. Aenean rhoncus tristique tellus at sagittis. Vivamus
+                        at pretium augue, vel aliquam nibh. Nulla sit amet aliquam ligula, at luctus turpis.
+                    </div>
+
+                </div>
+                <div class="col col-1-4">
+
+                    <div class="main-news-text">
+                        Vivamus ornare lacinia sapien ac posuere. Pellentesque hendrerit arcu dignissim orci mollis malesuada sit amet ac justo. Mauris at nisl tincidunt, varius lorem vitae, efficitur nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris
+                        et lacinia nunc, dictum ullamcorper massa. Phasellus mollis vulputate nulla vitae luctus. Proin sed sodales nisl, ut porta lacus. Quisque sit amet tristique tellus.
+                    </div>
+                </div>
             </div>
-        </footer>
-    </div>
-<script src="js/out.js"></script>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-logo">
+                <a href="/">
+                        <img  src='images/Clouds-icon.png' width="100" height="80" >
+                    </a>
+            </div>
+            <div class="row clearfix">
+                <div class="col col-1-2">
+
+                    <ul class="footer-menu">
+                        <li><a href="">Strona główna</a></li>
+                        <li><a href="">O projekcie</a></li>
+                        <li><a href="">Kontakt</a></li>
+                    </ul>
+
+                </div>
+                <div class="col col-1-2">
+
+                    <span class="copyright">
+                            copyright © app
+                        </span>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/app.js">
+    </script>
 </body>
 
 </html>

@@ -1,28 +1,71 @@
-fetch('http://api.gios.gov.pl/pjp-api/rest/station/findAll')
-.then(r => r.json())
-.then(data => {
-    var newArray = data.filter(function(el) {
-        return el.city;
-    });
-
-    const namesArray = newArray.map(item => {
-        return item.city.name
-    });
-    const unique = namesArray.filter(function(elem, index, self) {
-        return index === self.indexOf(elem);
-    })
-    const sortedList=unique.sort();
-
-    const cityLi = unique.map(item => {
-        const list = document.querySelector('#listComponents');
-        const newListItem = document.createElement('li');
-        newListItem.innerText = item;
-        list.appendChild(newListItem);
-    });
-
+document.addEventListener('DOMContentLoaded', function() {
     const inputCity=document.getElementById('inputCity');
+    var slider = document.querySelector('#main-slider');
+      var prev = slider.querySelector(':scope .left');
+      var next = slider.querySelector(':scope .right');
+      var slides = slider.querySelectorAll(':scope .slide');
+      var currentSlide = 0;
+      var timer = null;
+      var timeDelay = 5000;
 
-    
+      var timeoutNextSlide = function() {
+          timer = setTimeout(function() {
+              next.click();
+          }, timeDelay);
+      };
+
+      var prevSlide = function() {
+          for (var i=0; i<slides.length; i++) {
+              slides[i].classList.remove('active');
+          }
+          currentSlide--;
+
+          if (currentSlide < 0) {
+              currentSlide = slides.length-1;
+          }
+
+          slides[currentSlide].classList.add('active');
+
+          clearTimeout(timer);
+          timeoutNextSlide();
+      };
+
+      var nextSlide = function() {
+          for (var i=0; i<slides.length; i++) {
+              slides[i].classList.remove('active');
+          }
+
+          currentSlide++;
+
+          if (currentSlide > slides.length-1) {
+              currentSlide = 0;
+          }
+
+          slides[currentSlide].classList.add('active');
+
+          clearTimeout(timer);
+          timeoutNextSlide();
+      };
+
+      timeoutNextSlide();
+
+      prev.addEventListener('click', prevSlide);
+      next.addEventListener('click', nextSlide);
+      var boxes = document.querySelectorAll('.picture-cnt');
+          var markBox = function(e) {
+              e.preventDefault();
+
+              for (var i=0; i<boxes.length; i++) {
+                  boxes[i].classList.remove('active-box');
+              }
+
+              e.currentTarget.classList.add('active-box');
+          };
+
+          for (var i=0; i<boxes.length; i++) {
+              boxes[i].addEventListener('click', markBox)
+          }
 
 
-});
+
+          })
