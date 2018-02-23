@@ -66,6 +66,17 @@ document.addEventListener('DOMContentLoaded', function() {
               boxes[i].addEventListener('click', markBox)
           }
 
-
-
           })
+          function progressBar() {
+            var windowTop = window.scrollY,
+              documentHeight = document.documentElement.scrollHeight,
+              windowHeight = window.innerHeight;
+
+            var totalScroll = (windowTop/(documentHeight-windowHeight))*100;
+
+            document.querySelector('.progress-bar-scrolling').style.width = totalScroll+'%';
+          }
+
+          window.addEventListener('scroll', progressBar);
+
+          $
